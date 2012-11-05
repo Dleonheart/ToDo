@@ -1,5 +1,5 @@
 <?php include ('plantillas/header.php'); ?>
-<div data-role="page" data-url="/ToDoBases/index.php?url=inicio">
+<div data-role="page" data-url="/ToDo/index.php?url=inicio">
 <header data-role="header" data-position="fixed" data-id="header">
 		<h1>ToDo</h1>
 		<a href="index.php?url=login/cerrarSesion">Cerrar</a>
