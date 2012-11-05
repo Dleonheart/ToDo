@@ -1,7 +1,7 @@
 <?php 
-namespace ToDoBases;
+namespace ToDo;
 use \Controllers;	
-	//cualquier require aqui
+//cualquier require aqui
 	require 'config/config.php';
 	require 'bootstrap.php';
 /*Inicio del enrutamiento*/
