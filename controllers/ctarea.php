@@ -55,7 +55,7 @@ class Ctarea extends OpController{
 		$listaA = $tareasData->getProYAreas();
 		$listaPro = $tareasData->countTareasPro();
 
-		$personalData = new personal($this->usuario, $this->pass);
+		$personalData = new personal($this->db);
 		$listaPer = $personalData->getListPersonal();
 
 		$viewBag = array('listaA'=>$listaA,
