@@ -1,0 +1,27 @@
+.ui-page{
+	background-image: url(../images/fondo.png)!important;
+}
+
+div.wrapper{
+	width:90%;
+	margin: 0 auto;
+}
+
+
+.alert{
+	padding:5px;
+
+}
+
+table { width:100%; }
+    table caption { text-align:left;  }
+    table thead th { text-align:left; border-bottom-width:1px; border-top-width:1px; }
+    table th, td { text-align:left; padding:6px;} 
+
+/*.footer{
+	position:absolute;
+	bottom:0;
+	width:100%;
+	margin-top:10px;
+}
+*/
