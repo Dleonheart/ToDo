@@ -15,7 +15,12 @@ class Carea extends OpController{
 		
 		$areasData = new area($this->db);
 		$areas = $areasData->allareas();
-		$viewBag = array('areas' => $areas);
-		$this->loadView('verAreas.php',$viewBag);
+		if(is_string($areas)){
+			$viewBag['error'] = $areas;
+			$this->loadView('panelIni.php', $viewBag); 
+		}else{
+			$viewBag = array('areas' => $areas);
+			$this->loadView('verAreas.php',$viewBag);
+	         }
 	}
 }

@@ -15,7 +15,13 @@ class Cproyecto extends OpController{
 		
 		$proyectosData = new proyecto($this->db);
 		$proyectos = $proyectosData->allProyectos();
-		$viewBag = array('proyectos' => $proyectos);
-		$this->loadView('verProyectos.php',$viewBag);
+		if(is_string($proyectos)){
+			$viewBag['error'] = $proyectos;
+			$this->loadView('panelIni.php', $viewBag); 
+		}else{
+			$viewBag = array('proyectos' => $proyectos);
+			$this->loadView('verProyectos.php',$viewBag);
+	         }
+		
 	}
 }

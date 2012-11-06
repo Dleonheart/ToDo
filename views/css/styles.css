@@ -17,7 +17,7 @@ table { width:100%; }
     table caption { text-align:left;  }
     table thead th { text-align:left; border-bottom-width:1px; border-top-width:1px; }
     table th, td { text-align:left; padding:6px;} 
-
+    table td.button {text-align:center!important;} 
 /*.footer{
 	position:absolute;
 	bottom:0;
