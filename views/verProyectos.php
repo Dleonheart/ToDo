@@ -35,8 +35,9 @@
 					
 					<!-- popups de eliminar -->
 					<div id="eliminar_<?php echo $proyecto->K_PROYECTO; ?>" data-role="popup" class="ui-content" data-overlay-theme="a" data-theme="a">
-						<p>Seguro que desea dar de baja el proyecto <?php echo $proyecto->N_NOMBRE; ?></p>
-					    <a href="?url=cproyecto/eliminar/<?php echo $tarea->K_PROYECTO;?>" data-mini="true" data-role="button" data-icon="delete">Aceptar</a>
+						<p>¿desea dar de baja: 
+						 <?php echo $proyecto->N_NOMBRE; ?> ?</p>
+					    <a href="?url=cproyecto/eliminar/<?php echo $proyecto->K_PROYECTO;?>" data-mini="true" data-role="button" data-icon="delete">Aceptar</a>
 					    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
 					</div>
 				<?php endforeach; ?>
@@ -44,7 +45,7 @@
 			<?php endif; ?>
 			<ul data-role="listview" data-theme="a" data-inset="true">
 				<li data-role="list-divider">Opciones</li>
-				<li><a href="#nuevoProyecto" data-rel="popup" data-position-to="window">Crear Proyectos</a></li>
+				<li><a href="#nuevoProyecto" data-rel="popup" data-position-to="body">Crear Proyectos</a></li>
 			</ul>
 
 			<div id="nuevoProyecto" data-role="popup" class="ui-content" data-overlay-theme="a" data-theme="a">
