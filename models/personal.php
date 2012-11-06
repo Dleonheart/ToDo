@@ -39,4 +39,42 @@ class Personal extends DataInterface{
 		}
 	}
 
+
+	public function crearPersonal($nombresE,$apellidosE,$tipoDocE,$numDocE,$cargoE){
+		try{
+			$stm = $this->dataContext->prepare("INSERT INTO ADMINTODO.EMPLEADO (K_EMPLEADO, N_NOMBRES, N_APELLIDOS,	TIPO_DOCUMENTO, Q_DOCUMENTO, CARGO, ESTADOEMP) 
+												VALUES ((SELECT MAX(K_EMPLEADO) FROM ADMINTODO.EMPLEADO)+1,:nombresE,:apellidosE,:tipoDocE,:numDocE,:cargoE,'A')");
+			$stm->execute(array(':nombresE'=>$nombresE,':apellidosE'=> $apellidosE,':tipoDocE'=> $tipoDocE,':numDocE'=> $numDocE,':cargoE'=>$cargoE));
+				
+			if($stm == true){				
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		catch(PDOException $e){
+			return $e->getMessage();
+		}
+	}
+
+	public function eliminarPersonal($kempleado){
+		try{
+			$stm = $this->dataContext->prepare("UPDATE ADMINTODO.EMPLEADO e SET e.ESTADOPER = 'D' 
+												WHERE e.K_EMPLEADO = :kempleado AND e.CARGO != 'DP' AND e.CARGO != 'DA' AND 
+													(SELECT COUNT(t.K_TAREA) FROM ADMINTODO.TAREA WHERE t.K_EMPLEADO = :kempleado AND t.ESTADOTAR = 0) = 0");
+			$stm->execute(array(':kempelado'=>$kempelado));
+			
+			if($stm == true){
+				return true;	
+			}else{
+				return false;	
+			}			
+		}
+		catch(PDOException $e){
+			return $e->getMessage();
+		}
+
+	}
+
 }
