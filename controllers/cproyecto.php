@@ -15,7 +15,25 @@ class Cproyecto extends OpController{
 		
 		$proyectosData = new proyecto($this->db);
 		$proyectos = $proyectosData->allProyectos();
-		$viewBag = array('proyectos' => $proyectos);
-		$this->loadView('verProyectos.php',$viewBag);
+		if(is_string($proyectos)){ // si se devuelve un string es una excepcion;
+			$viewBag['error'] = $proyectos;
+			$this->loadView('panelIni.php', $viewBag); 
+		}else{
+			$viewBag = array('proyectos' => $proyectos);
+			$this->loadView('verProyectos.php',$viewBag);
+	         }
+		
+	}
+
+	public function eliminar ($id){
+		$proyectosData = new proyecto($this->db);
+		try{ //aqui se captura la excepción desde el controlador y no desde el modelo
+			$proyectosData->darBaja($id);
+			$viewBag = array('mensaje' => "operación exitosa");
+			$this->loadView('panelIni.php',$viewBag);
+		}catch(PDOException $e){
+			$viewBag = array('error' => $e);
+			$this->loadView('panelIni.php',$viewBag);
+		}
 	}
 }

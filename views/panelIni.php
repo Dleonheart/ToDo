@@ -12,10 +12,10 @@
 			</h2>	
 			<ul data-role="listview" data-theme="a" data-inset="true">
 				<li data-role="list-divider">Opciones</li>
-				<li><a href="index.php?url=cproyecto/verProyectos">Ver Proyecto</a></li>
-				<li><a href="index.php?url=carea/verAreas">Ver Areas</a></li>
-				<li><a href="index.php?url=cpersonal/verPersonal">Manejar personal</a></li>
-				<li><a href="index.php?url=ctarea/verTareas">Ver Tareas</a></li>
+				<li><a href="index.php?url=cproyecto/verProyectos" rel="external">Ver Proyecto</a></li>
+				<li><a href="index.php?url=carea/verAreas" rel="external">Ver Areas</a></li>
+				<li><a href="index.php?url=cpersonal/verPersonal" rel="external">Manejar personal</a></li>
+				<li><a href="index.php?url=ctarea/verTareas" rel="external">Ver Tareas</a></li>
 			</ul>
 
 			<!-- mensajes de la bd y otros -->
