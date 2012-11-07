@@ -52,7 +52,9 @@
 																	<select name="responsable" data-mini="true" name="responsable" id="responsable">
 																		<option>Responsable</option>
 																       	<?php foreach($listaPer as $per): ?>
-																       		<option value="<?php echo $per->K_EMPLEADO;?>"><?php echo $per->N_NOMBRES." ".$per->N_APELLIDOS;?></option>
+																       		<?php if($per->CARGO == 'PP'):?>
+																       			<option value="<?php echo $per->K_EMPLEADO;?>"><?php echo $per->N_NOMBRES." ".$per->N_APELLIDOS;?></option>
+																       		<?php endif; ?>															       		
 																	    <?php  endforeach;?>																    
 																	</select>																	
 

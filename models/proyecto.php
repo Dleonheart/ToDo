@@ -24,4 +24,10 @@ class Proyecto extends DataInterface{
 			return $e->getMessage();
 		}
 	}
+
+	public function darBaja($id){
+		$stm = $this->dataContext->prepare("UPDATE ADMINTODO.PROYECTO SET ESTADOPRO = ?  
+											WHERE K_PROYECTO = ?");
+		$stm->execute(array('DB',$id));
+	}
 }

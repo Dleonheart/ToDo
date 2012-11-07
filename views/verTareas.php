@@ -45,7 +45,7 @@
 															</a>
 
 															<!-- <div data-role="controlgroup" data-type="horizontal" > -->
-															<a href="#eliminar<?php echo $tarea->K_TAREA;?>" data-rel="popup" data-position-to="window" data-rel="popup" data-transition="slideup" data-icon="delete" data-iconpos="notext">Eliminar</a>
+															<a href="#eliminar<?php echo $tarea->K_TAREA;?>" data-rel="popup" data-position-to="window" data-transition="slideup" data-icon="delete" data-iconpos="notext">Eliminar</a>
 																
 															<!-- </div> -->																										
 													</li>
