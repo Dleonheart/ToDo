@@ -58,10 +58,22 @@ class Ctarea extends OpController{
 		$personalData = new personal($this->db);
 		$listaPer = $personalData->getListPersonal();
 
-		$viewBag = array('listaA'=>$listaA,
+
+		if(is_string($listaA)){
+			$viewBag = array('error'=>$listaA);
+			$this->loadview("panelIni.php",$viewBag);
+		}elseif(is_string($listaPer)){
+			$viewBag = array('error'=>$listaPer);
+			$this->loadview("panelIni.php",$viewBag);
+		}elseif(is_string($listaPro)){
+			$viewBag = array('error'=>$listaPro);
+			$this->loadview("panelIni.php",$viewBag);
+		}else{
+			$viewBag = array('listaA'=>$listaA,
 						 'listaPer'=>$listaPer,
 						 'listaPro'=>$listaPro,);
-		$this->loadview("nuevaTarea.php",$viewBag);
+			$this->loadview("nuevaTarea.php",$viewBag);			
+		}
 	}
 
 	public function crearNuevaT(){
