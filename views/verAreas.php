@@ -16,7 +16,7 @@
 			<?php if (isset($areas)): ?>
 				<table summary="Tabla para ver areas">
 					<tr class="ui-body-a">
-						<th scope="col">Nombre</th>
+						<th scope="col">Area</th>
 						<th scope="col">Encargado</th>
 						<th scope="col">proyecto</th>
 						

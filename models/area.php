@@ -28,4 +28,16 @@ class Area extends DataInterface {
 			return $e->getMessage();
 		}
 	}
+
+	public function nueva($datosArea = null){
+		if (isset($datosArea) && is_array($datosArea)){
+			# code...
+			$stm = $this->dataContext->prepare('INSERT INTO ADMINTODO.AREA VALUES(
+												:idProyecto,
+												(SELECT max(k_area)+1 FROM ADMINTODO.AREA),
+												:codigoEnc,
+												:nombre)');
+			$stm->execute($datosArea);
+		}
+	}
 }

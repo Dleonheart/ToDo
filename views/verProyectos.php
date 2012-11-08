@@ -50,11 +50,9 @@
 
 			<div id="nuevoProyecto" data-role="popup" class="ui-content" data-overlay-theme="a" data-theme="a">
 				<h4>Ingrese los datos del nuevo Proyecto</h4>
-				<form action="">
+				<form action="index.php?url=cproyecto/nuevo" method="post" data-ajax='false'>
 					<label for="nombre">Nombre Proyecto</label>
 					<input type="text" id="nombre" name="nombre">
-					<label for="codigo">Código Proyecto</label>
-					<input type="text" id="codigo" name="codigo">
 					<label for="codEncargado">Código del encargado</label>
 					<input type="text" id="codEncargado" name="codEncargado">
 					<label for="fechaLimite">Fecha final</label>
