@@ -13,7 +13,7 @@ class Personal extends DataInterface{
 	public function getListPersonal(){
 		$listaPersonal = array();
 		try{
-			$stm = $this->dataContext->query('SELECT * FROM ADMINTODO.EMPLEADO ORDER BY EMPLEADO.CARGO');
+			$stm = $this->dataContext->query("SELECT e.* , TO_CHAR((ADMINTODO.FU_EMPPARTICIPACION(e.K_EMPLEADO)*100),'999,99') AS participacion FROM ADMINTODO.EMPLEADO e ORDER BY e.CARGO");
 			while($persona = $stm->fetchObject()){
 				$listaPersonal[] = $persona;
 			}
@@ -21,14 +21,13 @@ class Personal extends DataInterface{
 		}
 		catch(PDOEXception $e){
 			return $e->getMessage();
-		}
+		}		
 	}
 
 	public function contarPersonal(){
 		$cantidadP = array();
 		try{
-			$stm = $this->dataContext->query('SELECT EMPLEADO.CARGO as cargo, COUNT(EMPLEADO.CARGO) as numero 
-												FROM ADMINTODO.EMPLEADO GROUP BY EMPLEADO.CARGO ORDER BY EMPLEADO.CARGO');
+			$stm = $this->dataContext->query('SELECT EMPLEADO.CARGO as cargo, COUNT(EMPLEADO.CARGO) as numero FROM ADMINTODO.EMPLEADO GROUP BY EMPLEADO.CARGO ORDER BY EMPLEADO.CARGO');
 			while($cantidad = $stm->fetchObject()){
 				$cantidadP[] = $cantidad;
 			}

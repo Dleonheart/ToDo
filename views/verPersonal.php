@@ -24,7 +24,8 @@
 													<th scope="col">Nombres</th>
 													<th scope="col">Apellidos</th>
 													<th scope="col">Tipo Doc.</th>
-													<th scope="col">Número Doc.</th>												
+													<th scope="col">Número Doc.</th>
+													<th scope="col">Participacion.</th>												
 													<th scope="col">X</th>
 												</tr>											
 										      	<?php foreach ($listaP as $persona):?>
@@ -34,7 +35,8 @@
 															<td><?php echo $persona->N_APELLIDOS;?></td>
 															<td><?php echo $persona->TIPO_DOCUMENTO;?></td>
 															<td><?php echo $persona->Q_DOCUMENTO;?></td>
-															<td><a href="#eliminarP<?php echo $persona->K_EMPLEADO?>" data-rel="popup" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext">Despedir</a><!--Botnon de cerrado-->														</td>
+															<td><?php echo $persona->PARTICIPACION.' %';?></td>
+															<td><a href="#eliminarP<?php echo $persona->K_EMPLEADO?>" data-rel="popup" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext">Despedir</a></td>
 														</tr>
 														<!--PopUp eliminacion personal-->	
 														<div data-role="popup" id="eliminarP<?php echo $persona->K_EMPLEADO?>"  class="ui-content" data-overlay-theme="a" data-position-to="window">
