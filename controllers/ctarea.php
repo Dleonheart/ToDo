@@ -62,7 +62,7 @@ class Ctarea extends OpController{
 		if(is_string($listaA)){
 			$viewBag = array('error'=>$listaA);
 			$this->loadview("panelIni.php",$viewBag);
-<<<<<<< HEAD
+
 		}elseif(is_string($listaPer)){
 			$viewBag = array('error'=>$listaPer);
 			$this->loadview("panelIni.php",$viewBag);
@@ -73,7 +73,7 @@ class Ctarea extends OpController{
 			$viewBag = array('listaA'=>$listaA,
 						 'listaPer'=>$listaPer,
 						 'listaPro'=>$listaPro,);
-=======
+
 		}elseif(is_string($listaPro)){
 			$viewBag = array('error'=>$listaPro);
 			$this->loadview("panelIni.php",$viewBag);
@@ -84,7 +84,7 @@ class Ctarea extends OpController{
 			$viewBag = array('listaA'=>$listaA,
 							 'listaPer'=>$listaPer,
 							 'listaPro'=>$listaPro,);
->>>>>>> origin/Carlos
+
 			$this->loadview("nuevaTarea.php",$viewBag);			
 		}
 	}
