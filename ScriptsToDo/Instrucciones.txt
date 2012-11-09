@@ -1,0 +1,10 @@
+0) Conectarse como system
+1) Correr TSpaceToDo.sql
+2) Desconectar system y conectarse como admintodo/atd1
+3) Correr ToDo.sql
+4) Correr Llenado ToDo.sql
+5) Correr Funciones.sql
+5) Desconectarse de admintodo y conectarse como system
+6) Correr Creado Usuario ToDo.sql
+
+Nota: Cambiar las direcciones de los archivos 1 y 6, por donde desea crear los tablespace
