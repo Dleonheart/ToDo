@@ -60,8 +60,13 @@ class Personal extends DataInterface{
 	public function eliminarPersonal($kempleado){
 		try{
 			$stm = $this->dataContext->prepare("UPDATE ADMINTODO.EMPLEADO e SET e.ESTADOPER = 'D' 
-												WHERE e.K_EMPLEADO = :kempleado AND e.CARGO != 'DP' AND e.CARGO != 'DA' AND 
-													(SELECT COUNT(t.K_TAREA) FROM ADMINTODO.TAREA WHERE t.K_EMPLEADO = :kempleado AND t.ESTADOTAR = 0) = 0");
+												WHERE e.K_EMPLEADO = :kempleado AND e.CARGO != 'DP' 
+													AND (SELECT COUNT(t.K_TAREA) 
+															FROM ADMINTODO.TAREA 
+															WHERE t.K_EMPLEADO = :kempleado AND t.ESTADOTAR = 0) = 0
+													AND (SELECT COUNT(a.K_AREA) 
+															FROM ADMINTODO.AREA a
+															WHERE a.K_EMPLEADO = :kempelado) = 0");
 			$stm->execute(array(':kempelado'=>$kempelado));
 			
 			if($stm == true){
