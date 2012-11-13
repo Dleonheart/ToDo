@@ -35,7 +35,12 @@
 															<td><?php echo $persona->N_APELLIDOS;?></td>
 															<td><?php echo $persona->TIPO_DOCUMENTO;?></td>
 															<td><?php echo $persona->Q_DOCUMENTO;?></td>
-															<td><?php echo $persona->PARTICIPACION.' %';?></td>
+
+															<?php if( isset($persona->PARTICIPACION)){?>
+																<td><?php echo $persona->PARTICIPACION.' %';?></td>
+															<?php }else{?>
+																<td>S.P.</td>
+															<?php } ?>
 															<td><a href="#eliminarP<?php echo $persona->K_EMPLEADO?>" data-rel="popup" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext">Despedir</a></td>
 														</tr>
 														<!--PopUp eliminacion personal-->	
