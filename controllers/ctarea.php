@@ -74,18 +74,6 @@ class Ctarea extends OpController{
 						 'listaPer'=>$listaPer,
 						 'listaPro'=>$listaPro,);
 
-		}elseif(is_string($listaPro)){
-			$viewBag = array('error'=>$listaPro);
-			$this->loadview("panelIni.php",$viewBag);
-		}elseif(is_string($listaPer)){
-			$viewBag = array('error'=>$listaPer);
-			$this->loadview("panelIni.php",$viewBag);
-		}else{
-			$viewBag = array('listaA'=>$listaA,
-							 'listaPer'=>$listaPer,
-							 'listaPro'=>$listaPro,);
-
-			$this->loadview("nuevaTarea.php",$viewBag);			
 		}
 	}
 
