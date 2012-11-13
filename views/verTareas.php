@@ -101,7 +101,7 @@
 			</div><!-- /content -->
 
 			<div data-role="footer" data-position="fixed">
-				<a href="index.php?url=ctarea/cargarVistaNuevaT" data-role="button" class="ui-btn-right" data-icon="plus" data-iconpos="notext">Crear</a>								
+				<a href="index.php?url=ctarea/cargarVistaNuevaT" data-role="button" class="ui-btn-right" data-icon="plus" data-iconpos="notext" rel="external">Crear</a>								
 				<h3>ToDo</h3>				
 			</div><!-- /footer -->
 		</div>

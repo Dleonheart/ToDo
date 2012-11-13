@@ -13,19 +13,23 @@ class Ctarea extends OpController{
 	}
 
 	public function verTareas(){
-		$tareasData = new tarea($this->db);
-		$listaT = $tareasData->getTareas();
-		$proyecTar = $tareasData->countTareasPro();
+		
+		
+			$tareasData = new tarea($this->db);
+			$listaT = $tareasData->getTareas();
+			$proyecTar = $tareasData->countTareasPro();
+		
+		
 		if(is_string($listaT)){
 			$viewBag = array('error'=>$listaT);
-			$this->loadview("panelIni.php",$viewBag);
+			$this->loadView("panelIni.php",$viewBag);
 		}elseif(is_string($proyecTar)){
 			$viewBag = array('error'=>$listaT);
-			$this->loadview("panelIni.php",$viewBag);
+			$this->loadView("panelIni.php",$viewBag);
 		}else{
 			$viewBag = array('listaT'=>$listaT,
         	              	 'proyecTar' =>$proyecTar);
-			$this->loadview("verTareas.php",$viewBag);
+			$this->loadView("verTareas.php",$viewBag);
 		}		
 	}
 
@@ -61,18 +65,19 @@ class Ctarea extends OpController{
 
 		if(is_string($listaA)){
 			$viewBag = array('error'=>$listaA);
-			$this->loadview("panelIni.php",$viewBag);
+			$this->loadView("panelIni.php",$viewBag);
 
 		}elseif(is_string($listaPer)){
 			$viewBag = array('error'=>$listaPer);
-			$this->loadview("panelIni.php",$viewBag);
+			$this->loadView("panelIni.php",$viewBag);
 		}elseif(is_string($listaPro)){
 			$viewBag = array('error'=>$listaPro);
-			$this->loadview("panelIni.php",$viewBag);
+			$this->loadView("panelIni.php",$viewBag);
 		}else{
 			$viewBag = array('listaA'=>$listaA,
 						 'listaPer'=>$listaPer,
 						 'listaPro'=>$listaPro,);
+			$this->loadView("nuevaTarea.php",$viewBag);
 
 		}
 	}
