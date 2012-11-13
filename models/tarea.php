@@ -24,7 +24,7 @@ class Tarea extends DataInterface{
 			return $tareasList;
 		}
 		catch(PDOException $e){
-			return $e;
+			return $e->getMessage();
 		}
 
 	}
@@ -43,7 +43,7 @@ class Tarea extends DataInterface{
 			return $proyectosTar;
 		}
 		catch(PDOException $e){
-			return $e->getMessage;
+			return $e->getMessage();
 		}
 
 	}

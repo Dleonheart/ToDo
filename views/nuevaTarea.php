@@ -1,4 +1,4 @@
-<?php  include('plantillas/header');?>
+<?php  include('plantillas/header.php');?>
 		<div data-role="page">
 			<div data-role="header" data-position="fixed" data-id="header">
 				<a href="index.php?url=inicio" data-role="button" class="ui-btn-left" data-icon="home" data-iconpos="notext">Inicio</a>
