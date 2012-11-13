@@ -20,7 +20,16 @@ class Personal extends DataInterface{
 			return $listaPersonal;
 		}
 		catch(PDOEXception $e){
-			return $e->getMessage();
+			try{
+				$stm = $this->dataContext->query("SELECT e.* FROM ADMINTODO.EMPLEADO e ORDER BY e.CARGO");
+				while($persona = $stm->fetchObject()){
+					$listaPersonal[] = $persona;
+				}
+				return $listaPersonal;
+			}
+			catch(PDOEXception $e){
+				return $e->getMessage();
+			}
 		}		
 	}
 
