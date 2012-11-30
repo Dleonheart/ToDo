@@ -64,7 +64,8 @@ CREATE OR REPLACE FUNCTION FU_EMPPARTICIPACION (pk_empleado IN EMPLEADO.K_EMPLEA
 		--Se calcula el porcentaje de participacion deel codigo del empleado
 		l_porcentajepar := ((l_proyectos*3)+(l_areas*2)+l_tareas)/((l_totalp*3)+(l_totala)*2+l_totalt);
 		
-		
+	--Se retorna la variable l_porcentajepar, la cual contiene el porcentaje de participación del empleado cuyo codigo se paso
+	-- a la función de forma inicial	
 	RETURN l_porcentajepar;
 
 END FU_EMPPARTICIPACION;
