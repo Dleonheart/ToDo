@@ -13,7 +13,7 @@ class Area extends DataInterface {
 	public function allAreas(){
 		$areas = array();
 		try {
-			$stm = $this->dataContext->query('SELECT AREA.N_NOMBRE as nombre, 
+			$stm = $this->dataContext->query('SELECT AREA.N_NOMBRE as nombre, AREA.K_AREA as codigo , 
 													 EMPLEADO.N_NOMBRES as encargado,
 													 PROYECTO.N_NOMBRE as proyecto FROM ADMINTODO.AREA, ADMINTODO.PROYECTO, ADMINTODO.EMPLEADO
 													 WHERE PROYECTO.K_PROYECTO = AREA.K_PROYECTO AND 
@@ -39,5 +39,12 @@ class Area extends DataInterface {
 												:nombre)');
 			$stm->execute($datosArea);
 		}
+	}
+
+	public function eliminar($id){
+
+			$stm = $this->dataContext->prepare('DELETE FROM ADMINTODO.AREA WHERE K_AREA = :karea');
+			$stm->execute(array(':karea'=>$id));
+
 	}
 }

@@ -13,7 +13,8 @@ class Proyecto extends DataInterface{
 	public function allProyectos(){
 		$proyectos = array();
 		try {
-			$stm = $this->dataContext->query('SELECT * FROM ADMINTODO.PROYECTO');
+			$stm = $this->dataContext->query("SELECT p.*, TO_CHAR((ADMINTODO.FU_PORCENTAJE_PROGRESO(p.K_PROYECTO)*100),'999,99') AS progreso 
+												FROM ADMINTODO.PROYECTO p");
 			while ($proyecto = $stm->fetchObject()) {
 				$proyectos[] = $proyecto;
 			}
@@ -21,7 +22,17 @@ class Proyecto extends DataInterface{
 			return $proyectos;
 
 		} catch (PDOException $e) {
-			return $e->getMessage();
+			try {
+				$stm = $this->dataContext->query("SELECT p.* FROM ADMINTODO.PROYECTO p");
+				while ($proyecto = $stm->fetchObject()) {
+					$proyectos[] = $proyecto;
+				}
+
+				return $proyectos;
+
+			} catch (PDOException $e) {
+				return $e->getMessage();
+			}
 		}
 	}
 
@@ -32,7 +43,7 @@ class Proyecto extends DataInterface{
 	}
 
 	public function crearNuevoProyecto($datos,$area){
-		
+
 		$stm = $this->dataContext->prepare("INSERT into ADMINTODO.proyecto values ((select max(k_proyecto)+1 from ADMINTODO.proyecto), 
 											:codigo, 
 											:nombre, 
@@ -46,7 +57,7 @@ class Proyecto extends DataInterface{
 		$datosNuArea = array(':codigoEnc' => $datos[':codigo'],
 							 ':nombre' => 'Direccion',
 							 ':idProyecto' => $idProyecto );
-		
+
 		$area->nueva($datosNuArea); //codigo del director		
 	}
 }
