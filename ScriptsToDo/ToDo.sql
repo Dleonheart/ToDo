@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      ORACLE Version 11g                           */
-/* Created on:     06/11/2012 02:11:09 p.m.                     */
+/* Created on:     30/11/2012 12:41:58 p.m.                     */
 /*==============================================================*/
 
 
@@ -115,8 +115,10 @@ create table TAREA
    DESCRIPCION          VARCHAR2(250)        not null,
    Q_PRIORIDAD          NUMBER(1)            default 1 not null
       constraint CKC_Q_PRIORIDAD_TAREA check (Q_PRIORIDAD between 1 and 5),
-   ESTADOTAR            NUMBER(1)            default 0 not null
+   ESTADOTAR            NUMBER(1)            default 1 not null
       constraint CKC_ESTADOTAR_TAREA check (ESTADOTAR between 0 and 1 and ESTADOTAR in (0,1)),
+   F_ASIGNACION         DATE                 not null,
+   F_ENTREGA            DATE                 not null,
    constraint PK_TAREA primary key (K_TAREA)
 );
 
@@ -155,3 +157,8 @@ alter table TAREA
    add constraint FK_TAREA_ES_DESARR_AREA foreign key (K_PROYECTO, K_AREA)
       references AREA (K_PROYECTO, K_AREA);
 
+ALTER TABLE TAREA
+ADD CONSTRAINT F_ENTREGA_CK CHECK (F_ENTREGA > F_ASIGNACION);
+
+ALTER TABLE PROYECTO
+ADD CONSTRAINT F_FIN_CK CHECK (F_INICIO < F_FIN);
