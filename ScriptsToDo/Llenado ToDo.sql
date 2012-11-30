@@ -48,20 +48,20 @@ INSERT INTO AREA VALUES(4,10,2,'Direccion');
 -- TAREA --
 --(kTAREA, kEMPLADO, kPROYECTO, kAREA, DESCRIPCION, PRIORIDAD,ESTADO)
 
-INSERT INTO TAREA VALUES(1,10,1,1,'Reunir informacion',2,0);
-INSERT INTO TAREA VALUES(2,4,1,2,'Reclutar personal capacitado',5,1);
-INSERT INTO TAREA VALUES(3,9,1,3,'Reunir informacion',4,1);
-INSERT INTO TAREA VALUES(4,8,2,4,'Calcular costos a largo plazo',1,1);
-INSERT INTO TAREA VALUES(5,4,2,5,'Evaulacion de resultados actuales',3,0);
-INSERT INTO TAREA VALUES(6,9,3,6,'Reunir informacion',5,1);
-INSERT INTO TAREA VALUES(7,8,3,7,'Despedir a alguien',1,0);
-INSERT INTO TAREA VALUES(8,8,3,8,'Mejorar el desarrollo hasta ahora',2,1);
-INSERT INTO TAREA VALUES(9,4,3,9,'Reunir informacion',4,1);
-INSERT INTO TAREA VALUES(10,8,3,7,'Disminuir el costo de los porocesos',3,1);
-INSERT INTO TAREA VALUES(11,4,4,10,'Reclutar personal capacitado',2,1);
-INSERT INTO TAREA VALUES(12,5,3,8,'Reunir informacion',4,1);
-INSERT INTO TAREA VALUES(13,4,1,2,'Disminuir el costo de los porocesos',5,1);
-INSERT INTO TAREA VALUES(14,9,1,3,'Reunir informacion',2,0);
-INSERT INTO TAREA VALUES(15,8,2,5,'Reclutar personal capacitado',4,0);
-INSERT INTO TAREA VALUES(16,7,1,2,'Reunir informacion',2,1);
-INSERT INTO TAREA VALUES(17,4,3,9,'Reclutar personal capacitado',3,0);
+--INSERT INTO TAREA VALUES(1,10,1,1,'Reunir informacion',2,0);
+--INSERT INTO TAREA VALUES(2,4,1,2,'Reclutar personal capacitado',5,1);
+--INSERT INTO TAREA VALUES(3,9,1,3,'Reunir informacion',4,1);
+--INSERT INTO TAREA VALUES(4,8,2,4,'Calcular costos a largo plazo',1,1);
+--INSERT INTO TAREA VALUES(5,4,2,5,'Evaulacion de resultados actuales',3,0);
+--INSERT INTO TAREA VALUES(6,9,3,6,'Reunir informacion',5,1);
+--INSERT INTO TAREA VALUES(7,8,3,7,'Despedir a alguien',1,0);
+--INSERT INTO TAREA VALUES(8,8,3,8,'Mejorar el desarrollo hasta ahora',2,1);
+--INSERT INTO TAREA VALUES(9,4,3,9,'Reunir informacion',4,1);
+--INSERT INTO TAREA VALUES(10,8,3,7,'Disminuir el costo de los porocesos',3,1);
+--INSERT INTO TAREA VALUES(11,4,4,10,'Reclutar personal capacitado',2,1);
+--INSERT INTO TAREA VALUES(12,5,3,8,'Reunir informacion',4,1);
+--INSERT INTO TAREA VALUES(13,4,1,2,'Disminuir el costo de los porocesos',5,1);
+--INSERT INTO TAREA VALUES(14,9,1,3,'Reunir informacion',2,0);
+--INSERT INTO TAREA VALUES(15,8,2,5,'Reclutar personal capacitado',4,0);
+--INSERT INTO TAREA VALUES(16,7,1,2,'Reunir informacion',2,1);
+--INSERT INTO TAREA VALUES(17,4,3,9,'Reclutar personal capacitado',3,0);
