@@ -76,14 +76,14 @@
 				            <option value="DI">Documento Internacional</option>
 				        </select>
 				        <label for="numDocE">Numero Doc.</label>
-						<input type="text" name="numDocE">
+						<input type="number" name="numDocE">
 				        <label for="cargoE">Cargo en el sistema: </label>
 						<select name="cargoE" id="cargoE" data-mini="true">
 				            <option value="DP">Director Proyecto</option>
 				            <option value="DA">Director Area</option>
 				            <option value="PP">Personal Proyecto</option>
-				            <option value="I">Invitado</option>
 				        </select>
+				        <input type="submit" value="Crear">
 					</form>					  					
 				</div>	
 				<h3>ToDo</h3>

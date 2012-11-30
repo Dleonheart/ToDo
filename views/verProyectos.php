@@ -19,6 +19,7 @@
 						<th scope="col">Inicio</th>
 						<th scope="col">Fin</th>
 						<th scope="col">Estado</th>
+						<th scope="col">Progreso</th>
 						<th scope="col">Dar Baja</th>
 					</tr>
 				<?php foreach($proyectos as $proyecto): ?>
@@ -28,6 +29,11 @@
 						<td><?php echo $proyecto->F_INICIO; ?></td>
 						<td><?php echo $proyecto->F_FIN; ?></td>
 						<td><?php echo $proyecto->ESTADOPRO; ?></td>
+						<?php if(isset($proyecto->PROGRESO)){?>
+							<td><?php echo $proyecto->PROGRESO; ?>%</td>
+						<?php }else{?>
+							<td>S.P.</td>
+						<?php } ?>
 						<td class="button">
 							<a href="#eliminar_<?php echo $proyecto->K_PROYECTO;?>" data-role="button" data-icon="delete" data-iconpos="notext" data-theme="b" data-rel="popup" data-position-to="window"></a>
 						</td>
@@ -54,7 +60,7 @@
 					<label for="nombre">Nombre Proyecto</label>
 					<input type="text" id="nombre" name="nombre">
 					<label for="codEncargado">Código del encargado</label>
-					<input type="text" id="codEncargado" name="codEncargado">
+					<input type="number" id="codEncargado" name="codEncargado">
 					<label for="fechaLimite">Fecha final</label>
 					<input type="date" id="fechaLimite" name="fechaLimite">
 					<input type="submit" value="Crear">
