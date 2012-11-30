@@ -58,7 +58,7 @@
 															<p>Ingrese el codigo de personal, para validar la transaccion</p>
 															<form action="?url=ctarea/realizarTarea" method="post">				
 																<label for="k_personal">Codigo</label>
-																<input type="text" name="k_personal" id="k_personal" data-mini="true" placeholder="Código personal" required />
+																<input type="number" name="k_personal" id="k_personal" data-mini="true" placeholder="Código personal" required />
 																<label for="k_tarea">Tarea</label>
 																<input readonly="readonly" type="text" name="k_tarea" id="k_tarea" data-mini="true" placeholder="Código tarea" value = "<?php echo $tarea->K_TAREA?>"/>																	
 																<br>
@@ -101,7 +101,7 @@
 			</div><!-- /content -->
 
 			<div data-role="footer" data-position="fixed">
-				<a href="index.php?url=ctarea/cargarVistaNuevaT" data-role="button" class="ui-btn-right" data-icon="plus" data-iconpos="notext">Crear</a>								
+				<a href="index.php?url=ctarea/cargarVistaNuevaT" data-role="button" class="ui-btn-right" data-icon="plus" data-iconpos="notext"  rel="external">Crear</a>								
 				<h3>ToDo</h3>				
 			</div><!-- /footer -->
 		</div>

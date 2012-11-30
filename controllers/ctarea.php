@@ -4,6 +4,7 @@ use config\Data;
 use PDOException;
 use Models\Tarea;
 use Models\Personal;
+use Models\Proyecto;
 
 class Ctarea extends OpController{
 
@@ -53,11 +54,12 @@ class Ctarea extends OpController{
 
 		$tareasData = new tarea($this->db);
 		$listaA = $tareasData->getProYAreas();
-		$listaPro = $tareasData->countTareasPro();
 
 		$personalData = new personal($this->db);
 		$listaPer = $personalData->getListPersonal();
 
+		$proyectosData = new proyecto($this->db);
+		$listaPro = $proyectosData->allProyectos();		
 
 		if(is_string($listaA)){
 			$viewBag = array('error'=>$listaA);
@@ -73,13 +75,14 @@ class Ctarea extends OpController{
 			$viewBag = array('listaA'=>$listaA,
 						 'listaPer'=>$listaPer,
 						 'listaPro'=>$listaPro,);
+			$this->loadview("nuevaTarea.php",$viewBag);
 		}
 	}
 
 	public function crearNuevaT(){
-		if (isset($_POST['k_area']) && isset($_POST['k_proyecto']) && isset($_POST['prioridad']) && isset($_POST['responsable']) && isset($_POST['descripcion'])){
+		if (isset($_POST['k_area']) && isset($_POST['k_proyecto']) && isset($_POST['prioridad']) && isset($_POST['responsable']) && isset($_POST['descripcion']) && isset($_POST['fentrega'])){
 			$tareasData = new tarea($this->db);
-			$exito = $tareasData->nuevaTarea($_POST['k_area'],$_POST['k_proyecto'],$_POST['responsable'],$_POST['descripcion'],$_POST['prioridad']);
+			$exito = $tareasData->nuevaTarea($_POST['k_area'],$_POST['k_proyecto'],$_POST['responsable'],$_POST['descripcion'],$_POST['prioridad'],$_POST['fentrega']);
 			if(is_string($exito)){
 				$viewBag = array('error'=>$exito);
 				$this->loadview("panelIni.php",$viewBag);

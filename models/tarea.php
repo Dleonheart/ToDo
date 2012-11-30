@@ -48,6 +48,8 @@ class Tarea extends DataInterface{
 
 	}
 
+
+
 	public function actualizarTarea($ktarea, $kpersonal){
 		try{
 			$stm = $this->dataContext->prepare("UPDATE ADMINTODO.TAREA t SET t.ESTADOTAR = 1 WHERE t.K_TAREA = :ktarea AND t.K_EMPLEADO = :kpersonal AND t.ESTADOTAR = 0");
@@ -79,11 +81,11 @@ class Tarea extends DataInterface{
 		}
 	}
 
-	public function nuevaTarea($karea, $kproyecto, $kempleado, $descripcion, $prioridad){
+	public function nuevaTarea($karea, $kproyecto, $kempleado, $descripcion, $prioridad, $fentrega){
 		try{
-			$stm = $this->dataContext->prepare('INSERT INTO ADMINTODO.TAREA (K_TAREA, K_EMPLEADO, K_PROYECTO,	K_AREA, DESCRIPCION, Q_PRIORIDAD, ESTADOTAR) 
-												VALUES ((SELECT MAX(K_TAREA) FROM ADMINTODO.TAREA)+1,:kempleado,:kproyecto,:karea,:descripcion,:prioridad,0)');
-			$stm->execute(array(':karea'=>$karea,':kproyecto'=> $kproyecto,':kempleado'=> $kempleado,':descripcion'=> $descripcion,':prioridad'=>$prioridad));
+			$stm = $this->dataContext->prepare("INSERT INTO ADMINTODO.TAREA (K_TAREA, K_EMPLEADO, K_PROYECTO,K_AREA, DESCRIPCION, Q_PRIORIDAD, ESTADOTAR, F_ASIGNACION, F_ENTREGA) 
+												VALUES ((SELECT MAX(K_TAREA) FROM ADMINTODO.TAREA)+1,:kempleado,:kproyecto,:karea,:descripcion,:prioridad,0,TO_DATE((SELECT SYSDATE FROM dual),'mm/dd/yyyy'),TO_DATE(:fentrega,'mm/dd/yyyy'))");
+			$stm->execute(array(':karea'=>$karea,':kproyecto'=> $kproyecto,':kempleado'=> $kempleado,':descripcion'=> $descripcion,':prioridad'=>$prioridad,':fentrega'=>$fentrega));
 			if($stm == true){				
 				return true;
 			}

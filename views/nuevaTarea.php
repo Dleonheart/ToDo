@@ -1,4 +1,4 @@
-<?php  include('plantillas/header');?>
+<?php include("plantillas/header.php");?>
 		<div data-role="page">
 			<div data-role="header" data-position="fixed" data-id="header">
 				<a href="index.php?url=inicio" data-role="button" class="ui-btn-left" data-icon="home" data-iconpos="notext">Inicio</a>
@@ -15,12 +15,12 @@
 							<li data-role="list-divider">Seleccione Proyecto</li>
 							<?php foreach ($listaPro as $pro):?>
 								<?php if( $pro->ESTADOPRO == 'A'):?>								
-									<li><h3><?php echo $pro->NPROYECTO; ?></h3>
+									<li><h3><?php echo $pro->N_NOMBRE; ?></h3>
 										<?php if(isset($listaA)):?>
 											<ul data-role="listview" data-inset="true" data-split-theme="a" data-split-icon="plus">								
 												<li data-role="list-divider"><h3>AREAS</h3></li>
 												<?php foreach ($listaA as $area):?>
-													<?php if($area->PNOMBRE == $pro->NPROYECTO):?>
+													<?php if($area->PNOMBRE == $pro->N_NOMBRE):?>
 														<li>
 															<a href="">
 																<h3><?php echo $area->ANOMBRE;?></h3>																														
@@ -60,6 +60,8 @@
 
 																	<label for="descripcion">Descripcion</label>
 																	<input type="text" name="descripcion" id="descripcion" data-mini="true" required/>
+																	<label for="fentrega">Fecha Entrega</label>
+																	<input type="date" name="fentrega" id="descripcion" data-mini="true" required/>
 																																																		
 																	<button type="submit" data-role="button" data-mini="true" data-theme="a" data-icon="check" class="submit">Realizar</button>
 																</form>															
